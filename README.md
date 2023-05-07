@@ -15,3 +15,8 @@ To use the Vbutton library in your Arduino sketch, you need to include the libra
 ```C++
 #include <Vbutton.h>
 ```
+## Constructor
+```C++
+Vbutton(uint8_t pin,int debounceDelay,int holdTime);
+
+```
