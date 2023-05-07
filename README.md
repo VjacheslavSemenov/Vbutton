@@ -20,3 +20,6 @@ To use the Vbutton library in your Arduino sketch, you need to include the libra
 Vbutton(uint8_t pin,int debounceDelay,int holdTime);
 
 ```
+1. pin: The pin to which the button is connected.
+2. debounceDelay: The amount of time to debounce the button (in milliseconds).
+3. holdTime: The amount of time to hold the button (in milliseconds).
