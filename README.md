@@ -28,24 +28,57 @@ Vbutton(uint8_t pin,int debounceDelay,int holdTime);
 ```C++
 void getState()
 ```
+Reads the current state of the button and updates the internal state of the library. This method should be called in your main loop.
 ```C++
 bool isClick()
 ```
+Returns true if the button was clicked and has not been clicked since the last time this method was calle
 ```C++
 bool isHold()
 ```
+Returns true if the button is currently being held down.
 ```C++
 bool isRelease()
 ```
+Returns true if the button was released and has not been released since the last time this method was called
 ```C++
 void disable()
 ```
+Disables the button.
 ```C++
 void enable()
 ```
+Enables the button.
 ```C++
 void setDebounceTime(int time)
 ```
 ```C++
 void setHoldTime(int time)
+```
+
+## Example
+```C++
+#include <Vbutton.h>
+
+Vbutton button(2, 50, 500);
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  button.getState();
+  
+  if (button.isClick()) {
+    Serial.println("Button clicked!");
+  }
+  
+  if (button.isHold()) {
+    Serial.println("Button held down!");
+  }
+  
+  if (button.isRelease()) {
+    Serial.println("Button released!");
+  }
+}
 ```
